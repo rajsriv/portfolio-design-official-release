@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promo - Grid Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;700&family=Teko:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script type="module" src="/main.js"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Background Grid Lines -->
+        <div class="bg-grid">
+            <div class="line v-line" style="left: 5%;"></div>
+            <div class="line v-line" style="left: 33%;"></div>
+            <div class="line v-line" style="left: 66%;"></div>
+            <div class="line v-line" style="left: 95%;"></div>
+            <div class="line h-line" style="top: 10%;"></div>
+            <div class="line h-line" style="top: 30%;"></div>
+            <div class="line h-line" style="top: 60%;"></div>
+            <div class="line h-line" style="top: 90%;"></div>
+
+            <!-- Crosshairs -->
+            <div class="crosshair" style="top: 10%; left: 5%;">+</div>
+            <div class="crosshair" style="top: 30%; left: 33%;">+</div>
+            <div class="crosshair" style="top: 60%; left: 66%;">+</div>
+            <div class="crosshair" style="top: 90%; left: 95%;">+</div>
+            <div class="crosshair" style="top: 10%; left: 33%;">+</div>
+            <div class="crosshair" style="top: 30%; left: 66%;">+</div>
+            <div class="crosshair" style="top: 30%; left: 66%;">+</div>
+            <div class="crosshair" style="top: 60%; left: 5%;">+</div>
+
+            <!-- Tech Deco -->
+            <div class="tech-dash" style="top: 5%; left: 2%;"></div>
+            <div class="tech-dash" style="top: 5%; right: 2%;"></div>
+            <div class="tech-dash" style="bottom: 5%; left: 2%;"></div>
+            <div class="tech-dash" style="bottom: 5%; right: 2%;"></div>
+            <div class="tech-box" style="top: 15%; right: 5%;"></div>
+        </div>
+
+        <!-- Section 1: Hero -->
+        <section class="section hero-section">
+            <div class="yellow-block header-block">
+                <div class="brand">RAJ<br>SRIVASTAVA</div>
+            </div>
+
+            <div class="hero-content">
+                <div class="date-tag">
+                    <span class="big-num">CS</span>
+                    <span class="small-text">STUDENT<br>@ I.Sc. BHU<br>INDIA //</span>
+                </div>
+
+                <div class="main-image-wrapper">
+                    <img src="images/raj-pfp.jpg" alt="Raj Srivastava" class="grayscale-img">
+                    <div class="overlay-texture"></div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="floating-yellow-block">
+                    <div class="event-details">
+                        <div class="date-header">FULL STACK / ML</div>
+                        <h1>HELLO<br><span class="outlined">WORLD</span></h1>
+                    </div>
+                    <div class="arrow-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="social-stack">
+                    <a href="https://github.com/rajsriv" target="_blank" class="s-link">GITHUB <span>↗</span></a>
+                    <a href="https://www.linkedin.com/in/raj-sriv2005" target="_blank" class="s-link">LINKEDIN
+                        <span>↗</span></a>
+                    <a href="https://www.instagram.com/raj.d.xebec/" target="_blank" class="s-link">INSTAGRAM
+                        <span>↗</span></a>
+                </div>
+
+                <div class="year-stamp">2026</div>
+            </div>
+
+            <div class="bottom-tags">
+                <div class="tag-item">
+                    <span class="num">01</span>
+                    <span class="info">ML ENGINEER<br>INTERN<br>@ BHU //</span>
+                </div>
+                <div class="tag-item">
+                    <span class="num">02</span>
+                    <span class="info">FOUNDER<br>DEBUGGERS<br>CLUB //</span>
+                </div>
+                <div class="double-slash">//</div>
+            </div>
+
+            <div class="section-divider">
+                <span>PORTFOLIO v1.0</span>
+            </div>
+        </section>
+
+        <!-- Section 2: Best Speakers -->
+        <section class="section speakers-section">
+            <!-- Complex Red Line Grid Backend -->
+            <div class="complex-grid-bg">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <path d="M0 0 L100 0 M0 0 L0 100 M0 0 L100 100 M100 0 L0 100" stroke="rgba(255, 0, 0, 0.2)"
+                                stroke-width="0.5" fill="none" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                </svg>
+            </div>
+
+            <!-- Left Yellow Bar -->
+            <div class="left-vertical-bar"></div>
+
+            <!-- Top Row Data -->
+            <div class="sf-top-row">
+                <div class="data-point" style="left: 10%;">
+                    <span class="dp-num">PY</span>
+                    <div class="dp-text">PYTHON<br>DATA ENG<br>PANDAS</div>
+                </div>
+                <div class="data-point" style="left: 60%;">
+                    <span class="dp-num">JS</span>
+                    <div class="dp-text">REACT<br>NODE.JS<br>FLASK</div>
+                </div>
+                <!-- Right Top Label -->
+                <div class="top-right-box">
+                    CORE<br>SKILLS
+                </div>
+            </div>
+
+            <!-- Middle MAIN Strip -->
+            <div class="sf-middle-row">
+                <div class="yellow-strip-content">
+                    <div class="strip-text">
+                        <h3>EXPERT IN</h3>
+                        <p>CLOUD & AWS</p>
+                    </div>
+                    <div class="strip-plus-icons">
+                        <span>+</span><span>+</span><span>+</span>
+                    </div>
+                </div>
+
+                <div class="sf-images">
+                    <div class="sf-img-wrapper yellow-tint">
+                        <img src="images/project-1.png" alt="Data Visualization">
+                    </div>
+                    <div class="sf-img-wrapper bw-tint">
+                        <img src="images/hero-2.png" alt="Code Structure">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Title Area -->
+            <div class="sf-title-area">
+                <div class="best-box">TECH</div>
+                <h2 class="speakers-text">STACK</h2>
+            </div>
+
+            <!-- Bottom Row Data -->
+            <div class="sf-bottom-row">
+                <div class="data-point" style="left: 10%;">
+                    <span class="dp-num">ML</span>
+                    <div class="dp-text">SCIKIT<br>KNN / RFC<br>MATPLOTLIB</div>
+                </div>
+                <div class="data-point" style="left: 55%;">
+                    <span class="dp-num">CC</span>
+                    <div class="dp-text">C / C++<br>Google Cloud<br>GIT / GITHUB</div>
+                </div>
+
+                <div class="bottom-graphic">
+                    <div class="thick-black-line"></div>
+                    <div class="small-yellow-sq"></div>
+                </div>
+            </div>
+
+            <!-- Decorative Dashes -->
+            <div class="tech-dash" style="top: 20%; left: 1%;"></div>
+            <div class="tech-dash" style="top: 80%; left: 1%;"></div>
+            <div class="tech-dash" style="top: 40%; right: 20%;"></div>
+        </section>
+
+        <!-- Section 3: Clients/Structure -->
+        <!-- Section 3: Clients/Structure -->
+        <section class="section clients-section">
+            <!-- Complex Red Line Grid Backend (Reused) -->
+            <div class="complex-grid-bg">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+                </svg>
+            </div>
+
+            <!-- Top Markers -->
+            <div class="cs-top-markers">
+                <div class="data-point" style="top: 20px; left: 15%;">
+                    <span class="dp-num">03</span>
+                    <div class="dp-text">CREATIVE<br>DESIGN<br>LAYOUT //</div>
+                </div>
+                <div class="tech-dash" style="top: 25px; left: 12%;"></div>
+
+                <!-- Top Right Yellow Label -->
+                <div class="cs-tr-label">
+                    WORK<br>HISTORY
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="cs-content-grid">
+
+                <!-- Left Content -->
+                <div class="cs-left-col">
+                    <div class="topic-row">
+                        <div class="topic-tag">// PROFILE</div>
+                        <div class="mini-img-strip">
+                            <img src="images/project-1.png">
+                            <img src="images/raj-pfp.jpg">
+                        </div>
+                    </div>
+
+                    <h2 class="cs-title">BUILDING<br>WITH IMPACT</h2>
+                    <div class="cs-logo">BHU/</div>
+
+                    <div class="cs-bottom-data">
+                        <div class="data-point">
+                            <span class="dp-num">24</span>
+                            <div class="dp-text">INTERN<br>MACHINE<br>LEARNING //</div>
+                        </div>
+                        <div class="data-point" style="margin-left: 40px;">
+                            <span class="dp-num">23</span>
+                            <div class="dp-text">HEAD<br>PROJECT<br>MANAGER //</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content (Yellow Block & Image) -->
+                <div class="cs-right-col">
+                    <div class="yellow-backdrop"></div>
+                    <div class="cs-main-image">
+                        <img src="images/hero-3.png" alt="Client Work">
+                        <div class="yellow-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Graphic Elements -->
+            <div class="cs-bottom-graphics">
+                <div class="arrow-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+                <div class="line-graphic">
+                    <div class="lg-thick"></div>
+                    <div class="lg-slash">//</div>
+                    <div class="lg-yellow-tab"></div>
+                </div>
+            </div>
+
+            <!-- Decorative Dashes -->
+            <div class="tech-dash" style="top: 15%; left: 1%;"></div>
+            <div class="tech-dash" style="bottom: 15%; left: 1%;"></div>
+            <div class="crosshair" style="top: 40%; left: 50%;">+</div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="section footer-section">
+            <div class="centered-cta">
+                <a href="mailto:raj2005sriv@gmail.com" class="mail-link">
+                    <span class="mail-text">MAIL ME</span>
+                    <div class="mail-icon-box">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
+                    </div>
+                </a>
+                <div class="email-display">raj2005sriv@gmail.com</div>
+            </div>
+
+            <!-- Footer Grid Lines -->
+            <div class="footer-line fl-left"></div>
+            <div class="footer-line fl-right"></div>
+        </footer>
+
+        <div class="floating-markers">
+            <div class="marker m1"></div>
+            <div class="marker m2"></div>
+            <div class="marker m3"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
