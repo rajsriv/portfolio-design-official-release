@@ -71,6 +71,11 @@ function setWindowState(panel, state) {
     panel.classList.add('is-minimized');
     panel.classList.remove('is-maximized');
     panel.dataset.closed = 'true';
+    const maximizeControl = panel.querySelector('.maximize');
+    const title = panel.querySelector('.titlebar h1, .titlebar h2')?.textContent.trim() ?? 'Window';
+    maximizeControl.textContent = '□';
+    maximizeControl.setAttribute('aria-label', `Maximize ${title} window`);
+    maximizeControl.setAttribute('aria-pressed', 'false');
   } else {
     delete panel.dataset.closed;
   }
@@ -86,6 +91,17 @@ function openWindow(panel) {
   if (!panel) return;
   setWindowState(panel, 'open');
   windows.forEach((item) => item.classList.toggle('is-focused', item === panel));
+}
+
+function toggleMaximize(panel) {
+  const maximize = !panel.classList.contains('is-maximized');
+  openWindow(panel);
+  panel.classList.toggle('is-maximized', maximize);
+  const control = panel.querySelector('.maximize');
+  const title = panel.querySelector('.titlebar h1, .titlebar h2')?.textContent.trim() ?? 'Window';
+  control.textContent = maximize ? '❐' : '□';
+  control.setAttribute('aria-label', `${maximize ? 'Restore' : 'Maximize'} ${title} window`);
+  control.setAttribute('aria-pressed', String(maximize));
 }
 
 windows.forEach((panel) => {
@@ -111,16 +127,17 @@ windows.forEach((panel) => {
 
   panel.querySelector('.minimize')?.addEventListener('click', () => setWindowState(panel, 'minimize'));
   panel.querySelector('.close')?.addEventListener('click', () => setWindowState(panel, 'close'));
-  panel.querySelector('.maximize')?.addEventListener('click', () => {
-    const maximize = !panel.classList.contains('is-maximized');
-    openWindow(panel);
-    panel.classList.toggle('is-maximized', maximize);
-  });
+  const maximizeControl = panel.querySelector('.maximize');
+  maximizeControl.setAttribute('aria-pressed', 'false');
+  maximizeControl.addEventListener('click', () => toggleMaximize(panel));
   panel.addEventListener('pointerdown', () => {
     windows.forEach((item) => item.classList.toggle('is-focused', item === panel));
   });
 
   const titlebar = panel.querySelector('.titlebar');
+  titlebar.addEventListener('dblclick', (event) => {
+    if (!event.target.closest('.window-control')) toggleMaximize(panel);
+  });
   titlebar.addEventListener('pointerdown', (event) => {
     if (event.target.closest('button') || panel.classList.contains('is-maximized')) return;
     event.preventDefault();
