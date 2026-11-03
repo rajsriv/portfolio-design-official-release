@@ -11,6 +11,7 @@ function setWindowState(panel, state) {
   if (state === 'minimize') panel.classList.add('is-minimized');
   if (state === 'close') {
     panel.classList.add('is-minimized');
+    panel.classList.remove('is-maximized');
     panel.dataset.closed = 'true';
   } else {
     delete panel.dataset.closed;
@@ -26,20 +27,20 @@ function setWindowState(panel, state) {
 function openWindow(panel) {
   if (!panel) return;
   setWindowState(panel, 'open');
-  panel.classList.remove('is-maximized');
   windows.forEach((item) => item.classList.toggle('is-focused', item === panel));
 }
 
 windows.forEach((panel) => {
   const title = panel.querySelector('.titlebar h1, .titlebar h2')?.textContent.trim() ?? 'Window';
   const button = document.createElement('button');
-  button.className = 'taskbar-app is-active';
+  const initiallyOpen = panel.id === 'about';
+  button.className = `taskbar-app${initiallyOpen ? ' is-active' : ''}`;
   button.type = 'button';
   button.textContent = title;
   button.title = title;
   button.dataset.restore = panel.id;
   button.setAttribute('aria-label', `Restore ${title}`);
-  button.setAttribute('aria-pressed', 'true');
+  button.setAttribute('aria-pressed', String(initiallyOpen));
   button.addEventListener('click', () => {
     if (!panel.classList.contains('is-minimized') && !panel.dataset.closed) {
       setWindowState(panel, 'minimize');
@@ -48,15 +49,47 @@ windows.forEach((panel) => {
     }
   });
   taskbarApps.append(button);
+  if (!initiallyOpen) setWindowState(panel, 'close');
 
   panel.querySelector('.minimize')?.addEventListener('click', () => setWindowState(panel, 'minimize'));
   panel.querySelector('.close')?.addEventListener('click', () => setWindowState(panel, 'close'));
   panel.querySelector('.maximize')?.addEventListener('click', () => {
-    panel.classList.toggle('is-maximized');
+    const maximize = !panel.classList.contains('is-maximized');
     openWindow(panel);
+    panel.classList.toggle('is-maximized', maximize);
   });
   panel.addEventListener('pointerdown', () => {
     windows.forEach((item) => item.classList.toggle('is-focused', item === panel));
+  });
+
+  const titlebar = panel.querySelector('.titlebar');
+  titlebar.addEventListener('pointerdown', (event) => {
+    if (event.target.closest('button') || panel.classList.contains('is-maximized')) return;
+    event.preventDefault();
+    openWindow(panel);
+    const startX = event.clientX;
+    const startY = event.clientY;
+    const rect = panel.getBoundingClientRect();
+    const baseX = Number.parseFloat(panel.dataset.dragX ?? '0');
+    const baseY = Number.parseFloat(panel.dataset.dragY ?? '0');
+    titlebar.setPointerCapture(event.pointerId);
+
+    const moveWindow = (moveEvent) => {
+      const dx = Math.min(Math.max(moveEvent.clientX - startX, 8 - rect.left), window.innerWidth - rect.right - 80);
+      const dy = Math.min(Math.max(moveEvent.clientY - startY, -rect.top), window.innerHeight - rect.top - 52);
+      panel.dataset.dragX = String(baseX + dx);
+      panel.dataset.dragY = String(baseY + dy);
+      panel.style.setProperty('--drag-x', `${baseX + dx}px`);
+      panel.style.setProperty('--drag-y', `${baseY + dy}px`);
+    };
+    const stopDragging = () => {
+      titlebar.removeEventListener('pointermove', moveWindow);
+      titlebar.removeEventListener('pointerup', stopDragging);
+      titlebar.removeEventListener('pointercancel', stopDragging);
+    };
+    titlebar.addEventListener('pointermove', moveWindow);
+    titlebar.addEventListener('pointerup', stopDragging, { once: true });
+    titlebar.addEventListener('pointercancel', stopDragging, { once: true });
   });
 });
 

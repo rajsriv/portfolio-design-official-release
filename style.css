@@ -32,14 +32,15 @@ a:focus-visible, button:focus-visible { outline: 1px dotted #111; outline-offset
 .bin-icon { font-size: 30px; color: #e9eeee; }
 
 .window-area { position: relative; z-index: 1; width: min(1120px, calc(100% - 130px)); margin: 0 auto 0 max(115px, calc((100% - 1120px) / 2 + 70px)); padding-top: 20px; display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(300px, .88fr); gap: 22px; align-items: start; }
-.window { min-width: 0; background: var(--face); border: 2px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: 1px 1px 0 #111, 2px 2px 0 rgba(0,0,0,.24); }
+.window { min-width: 0; background: var(--face); border: 2px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: 1px 1px 0 #111, 2px 2px 0 rgba(0,0,0,.24); transform: translate3d(var(--drag-x, 0px), var(--drag-y, 0px), 0); }
 .window.is-focused { position: relative; z-index: 2; }
 .window-about { grid-column: 1; }
 .window-skills { grid-column: 2; }
 .window-projects { grid-column: 1; }
 .window-experience { grid-column: 2; }
 .window-contact { grid-column: 1 / -1; width: min(660px, 100%); justify-self: center; }
-.titlebar { height: 27px; margin: 2px 2px 0; padding: 3px 4px; display: flex; align-items: center; gap: 6px; background: linear-gradient(90deg, #000080, #1084d0); color: #fff; }
+.titlebar { height: 27px; margin: 2px 2px 0; padding: 3px 4px; display: flex; align-items: center; gap: 6px; background: linear-gradient(90deg, #000080, #1084d0); color: #fff; cursor: grab; touch-action: none; user-select: none; }
+.titlebar:active { cursor: grabbing; }
 .titlebar h1, .titlebar h2, .titlebar > span:not(.titlebar-icon) { min-width: 0; margin: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 700; }
 .titlebar-icon { width: 16px; flex: 0 0 16px; color: #fff; text-align: center; font-size: 13px; }
 .window-controls { display: flex; gap: 3px; margin-left: auto; }
@@ -125,7 +126,7 @@ a:focus-visible, button:focus-visible { outline: 1px dotted #111; outline-offset
 .dialog-content p { margin: 0; line-height: 1.5; }
 .dialog-ok { display: block; min-width: 76px; margin: 0 auto 12px; cursor: pointer; }
 .is-minimized { display: none; }
-.is-maximized { position: fixed; z-index: 10; inset: 8px 8px 50px !important; width: auto !important; grid-column: auto !important; }
+.is-maximized { position: fixed; z-index: 10; inset: 8px 8px 50px !important; width: auto !important; grid-column: auto !important; transform: none; }
 
 @media (min-width: 1100px) {
   .window-about .window-content { padding: 20px; }
