@@ -1,303 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Promo - Grid Design</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;700&family=Teko:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script type="module" src="/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#008080">
+  <meta name="description" content="Raj Srivastava — computer science student, builder, and machine learning intern.">
+  <title>Raj Srivastava — Desktop Portfolio</title>
+  <script type="module" src="/main.js"></script>
 </head>
-
 <body>
-    <div class="grid-container">
-        <!-- Background Grid Lines -->
-        <div class="bg-grid">
-            <div class="line v-line" style="left: 5%;"></div>
-            <div class="line v-line" style="left: 33%;"></div>
-            <div class="line v-line" style="left: 66%;"></div>
-            <div class="line v-line" style="left: 95%;"></div>
-            <div class="line h-line" style="top: 10%;"></div>
-            <div class="line h-line" style="top: 30%;"></div>
-            <div class="line h-line" style="top: 60%;"></div>
-            <div class="line h-line" style="top: 90%;"></div>
-
-            <!-- Crosshairs -->
-            <div class="crosshair" style="top: 10%; left: 5%;">+</div>
-            <div class="crosshair" style="top: 30%; left: 33%;">+</div>
-            <div class="crosshair" style="top: 60%; left: 66%;">+</div>
-            <div class="crosshair" style="top: 90%; left: 95%;">+</div>
-            <div class="crosshair" style="top: 10%; left: 33%;">+</div>
-            <div class="crosshair" style="top: 30%; left: 66%;">+</div>
-            <div class="crosshair" style="top: 30%; left: 66%;">+</div>
-            <div class="crosshair" style="top: 60%; left: 5%;">+</div>
-
-            <!-- Tech Deco -->
-            <div class="tech-dash" style="top: 5%; left: 2%;"></div>
-            <div class="tech-dash" style="top: 5%; right: 2%;"></div>
-            <div class="tech-dash" style="bottom: 5%; left: 2%;"></div>
-            <div class="tech-dash" style="bottom: 5%; right: 2%;"></div>
-            <div class="tech-box" style="top: 15%; right: 5%;"></div>
-        </div>
-
-        <!-- Section 1: Hero -->
-        <section class="section hero-section">
-            <div class="yellow-block header-block">
-                <div class="brand">RAJ<br>SRIVASTAVA</div>
-            </div>
-
-            <div class="hero-content">
-                <div class="date-tag">
-                    <span class="big-num">CS</span>
-                    <span class="small-text">STUDENT<br>@ I.Sc. BHU<br>INDIA //</span>
-                </div>
-
-                <div class="main-image-wrapper">
-                    <img src="images/raj-pfp.jpg" alt="Raj Srivastava" class="grayscale-img">
-                    <div class="overlay-texture"></div>
-                </div>
-            </div>
-
-            <div class="hero-right">
-                <div class="floating-yellow-block">
-                    <div class="event-details">
-                        <div class="date-header">FULL STACK / ML</div>
-                        <h1>HELLO<br><span class="outlined">WORLD</span></h1>
-                    </div>
-                    <div class="arrow-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="social-stack">
-                    <a href="https://github.com/rajsriv" target="_blank" class="s-link">GITHUB <span>↗</span></a>
-                    <a href="https://www.linkedin.com/in/raj-sriv2005" target="_blank" class="s-link">LINKEDIN
-                        <span>↗</span></a>
-                    <a href="https://www.instagram.com/raj.d.xebec/" target="_blank" class="s-link">INSTAGRAM
-                        <span>↗</span></a>
-                </div>
-
-                <div class="year-stamp">2026</div>
-            </div>
-
-            <div class="bottom-tags">
-                <div class="tag-item">
-                    <span class="num">01</span>
-                    <span class="info">ML ENGINEER<br>INTERN<br>@ BHU //</span>
-                </div>
-                <div class="tag-item">
-                    <span class="num">02</span>
-                    <span class="info">FOUNDER<br>DEBUGGERS<br>CLUB //</span>
-                </div>
-                <div class="double-slash">//</div>
-            </div>
-
-            <div class="section-divider">
-                <span>PORTFOLIO v1.0</span>
-            </div>
-        </section>
-
-        <!-- Section 2: Best Speakers -->
-        <section class="section speakers-section">
-            <!-- Complex Red Line Grid Backend -->
-            <div class="complex-grid-bg">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <pattern id="grid-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
-                            <path d="M0 0 L100 0 M0 0 L0 100 M0 0 L100 100 M100 0 L0 100" stroke="rgba(255, 0, 0, 0.2)"
-                                stroke-width="0.5" fill="none" />
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-                </svg>
-            </div>
-
-            <!-- Left Yellow Bar -->
-            <div class="left-vertical-bar"></div>
-
-            <!-- Top Row Data -->
-            <div class="sf-top-row">
-                <div class="data-point" style="left: 10%;">
-                    <span class="dp-num">PY</span>
-                    <div class="dp-text">PYTHON<br>DATA ENG<br>PANDAS</div>
-                </div>
-                <div class="data-point" style="left: 60%;">
-                    <span class="dp-num">JS</span>
-                    <div class="dp-text">REACT<br>NODE.JS<br>FLASK</div>
-                </div>
-                <!-- Right Top Label -->
-                <div class="top-right-box">
-                    CORE<br>SKILLS
-                </div>
-            </div>
-
-            <!-- Middle MAIN Strip -->
-            <div class="sf-middle-row">
-                <div class="yellow-strip-content">
-                    <div class="strip-text">
-                        <h3>EXPERT IN</h3>
-                        <p>CLOUD & AWS</p>
-                    </div>
-                    <div class="strip-plus-icons">
-                        <span>+</span><span>+</span><span>+</span>
-                    </div>
-                </div>
-
-                <div class="sf-images">
-                    <div class="sf-img-wrapper yellow-tint">
-                        <img src="images/project-1.png" alt="Data Visualization">
-                    </div>
-                    <div class="sf-img-wrapper bw-tint">
-                        <img src="images/hero-2.png" alt="Code Structure">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Title Area -->
-            <div class="sf-title-area">
-                <div class="best-box">TECH</div>
-                <h2 class="speakers-text">STACK</h2>
-            </div>
-
-            <!-- Bottom Row Data -->
-            <div class="sf-bottom-row">
-                <div class="data-point" style="left: 10%;">
-                    <span class="dp-num">ML</span>
-                    <div class="dp-text">SCIKIT<br>KNN / RFC<br>MATPLOTLIB</div>
-                </div>
-                <div class="data-point" style="left: 55%;">
-                    <span class="dp-num">CC</span>
-                    <div class="dp-text">C / C++<br>Google Cloud<br>GIT / GITHUB</div>
-                </div>
-
-                <div class="bottom-graphic">
-                    <div class="thick-black-line"></div>
-                    <div class="small-yellow-sq"></div>
-                </div>
-            </div>
-
-            <!-- Decorative Dashes -->
-            <div class="tech-dash" style="top: 20%; left: 1%;"></div>
-            <div class="tech-dash" style="top: 80%; left: 1%;"></div>
-            <div class="tech-dash" style="top: 40%; right: 20%;"></div>
-        </section>
-
-        <!-- Section 3: Clients/Structure -->
-        <!-- Section 3: Clients/Structure -->
-        <section class="section clients-section">
-            <!-- Complex Red Line Grid Backend (Reused) -->
-            <div class="complex-grid-bg">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-                </svg>
-            </div>
-
-            <!-- Top Markers -->
-            <div class="cs-top-markers">
-                <div class="data-point" style="top: 20px; left: 15%;">
-                    <span class="dp-num">03</span>
-                    <div class="dp-text">CREATIVE<br>DESIGN<br>LAYOUT //</div>
-                </div>
-                <div class="tech-dash" style="top: 25px; left: 12%;"></div>
-
-                <!-- Top Right Yellow Label -->
-                <div class="cs-tr-label">
-                    WORK<br>HISTORY
-                </div>
-            </div>
-
-            <!-- Main Content Area -->
-            <div class="cs-content-grid">
-
-                <!-- Left Content -->
-                <div class="cs-left-col">
-                    <div class="topic-row">
-                        <div class="topic-tag">// PROFILE</div>
-                        <div class="mini-img-strip">
-                            <img src="images/project-1.png">
-                            <img src="images/raj-pfp.jpg">
-                        </div>
-                    </div>
-
-                    <h2 class="cs-title">BUILDING<br>WITH IMPACT</h2>
-                    <div class="cs-logo">BHU/</div>
-
-                    <div class="cs-bottom-data">
-                        <div class="data-point">
-                            <span class="dp-num">24</span>
-                            <div class="dp-text">INTERN<br>MACHINE<br>LEARNING //</div>
-                        </div>
-                        <div class="data-point" style="margin-left: 40px;">
-                            <span class="dp-num">23</span>
-                            <div class="dp-text">HEAD<br>PROJECT<br>MANAGER //</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Content (Yellow Block & Image) -->
-                <div class="cs-right-col">
-                    <div class="yellow-backdrop"></div>
-                    <div class="cs-main-image">
-                        <img src="images/hero-3.png" alt="Client Work">
-                        <div class="yellow-overlay"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Graphic Elements -->
-            <div class="cs-bottom-graphics">
-                <div class="arrow-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <path d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                </div>
-                <div class="line-graphic">
-                    <div class="lg-thick"></div>
-                    <div class="lg-slash">//</div>
-                    <div class="lg-yellow-tab"></div>
-                </div>
-            </div>
-
-            <!-- Decorative Dashes -->
-            <div class="tech-dash" style="top: 15%; left: 1%;"></div>
-            <div class="tech-dash" style="bottom: 15%; left: 1%;"></div>
-            <div class="crosshair" style="top: 40%; left: 50%;">+</div>
-        </section>
-
-        <!-- Footer Section -->
-        <footer class="section footer-section">
-            <div class="centered-cta">
-                <a href="mailto:raj2005sriv@gmail.com" class="mail-link">
-                    <span class="mail-text">MAIL ME</span>
-                    <div class="mail-icon-box">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                    </div>
-                </a>
-                <div class="email-display">raj2005sriv@gmail.com</div>
-            </div>
-
-            <!-- Footer Grid Lines -->
-            <div class="footer-line fl-left"></div>
-            <div class="footer-line fl-right"></div>
-        </footer>
-
-        <div class="floating-markers">
-            <div class="marker m1"></div>
-            <div class="marker m2"></div>
-            <div class="marker m3"></div>
-        </div>
-
+  <main class="desktop" aria-label="Raj Srivastava portfolio desktop">
+    <div class="desktop-icons" aria-label="Desktop shortcuts">
+      <a class="desktop-icon" href="#about"><span class="icon-art computer-icon" aria-hidden="true">▣</span><span>My Computer</span></a>
+      <a class="desktop-icon" href="#skills"><span class="icon-art folder-icon" aria-hidden="true">📁</span><span>Skills</span></a>
+      <a class="desktop-icon" href="#projects"><span class="icon-art folder-icon" aria-hidden="true">📁</span><span>Projects</span></a>
+      <a class="desktop-icon" href="#contact"><span class="icon-art bin-icon" aria-hidden="true">♻</span><span>Contact</span></a>
     </div>
-</body>
 
+    <div class="window-area">
+      <section class="window window-about" id="about" aria-labelledby="about-title" data-window="about">
+        <header class="titlebar"><span class="titlebar-icon" aria-hidden="true">▣</span><h1 id="about-title">My Computer — Raj Srivastava</h1><div class="window-controls"><button class="window-control minimize" type="button" aria-label="Minimize About window">_</button><button class="window-control maximize" type="button" aria-label="Maximize About window">□</button><button class="window-control close" type="button" aria-label="Close About window">×</button></div></header>
+        <nav class="menubar" aria-label="About window menu"><a href="#about">File</a><a href="#skills">Edit</a><a href="#projects">View</a><a href="#contact">Help</a></nav>
+        <div class="toolbar"><span class="toolbar-arrow">◀</span><span class="toolbar-arrow muted">▶</span><span class="toolbar-separator"></span><span class="address-label">Address</span><span class="address-field">C:\\Users\\Raj\\Portfolio</span><span class="go-button">Go</span></div>
+        <div class="window-content about-content">
+          <div class="profile-photo"><img src="/images/raj-pfp.jpg" alt="Portrait of Raj Srivastava"></div>
+          <div class="about-copy"><p class="eyebrow">COMPUTER SCIENCE · BHU · INDIA</p><h2>Hello, world!</h2><p>I’m Raj Srivastava, a computer science student who enjoys building useful things with software, data, and machine learning.</p><div class="link-row"><a class="classic-link" href="https://github.com/rajsriv" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="classic-link" href="https://www.linkedin.com/in/raj-sriv2005" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="classic-link" href="https://www.instagram.com/raj.d.xebec/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div><div class="status-note"><span class="status-led"></span> Available for interesting projects</div></div>
+        </div>
+        <footer class="statusbar"><span>1 object(s)</span><span>My Computer</span></footer>
+      </section>
+
+      <section class="window window-skills" id="skills" aria-labelledby="skills-title" data-window="skills">
+        <header class="titlebar"><span class="titlebar-icon" aria-hidden="true">📁</span><h2 id="skills-title">Skills</h2><div class="window-controls"><button class="window-control minimize" type="button" aria-label="Minimize Skills window">_</button><button class="window-control maximize" type="button" aria-label="Maximize Skills window">□</button><button class="window-control close" type="button" aria-label="Close Skills window">×</button></div></header>
+        <div class="window-content"><p class="content-heading">A few things I work with:</p><div class="skill-list"><div class="skill-row"><span class="skill-icon">🐍</span><span>Python · Pandas · scikit-learn</span></div><div class="skill-row"><span class="skill-icon">🌐</span><span>JavaScript · React · Node.js</span></div><div class="skill-row"><span class="skill-icon">☁️</span><span>AWS · Google Cloud · Flask</span></div><div class="skill-row"><span class="skill-icon">▤</span><span>C · C++ · Git · Data visualization</span></div></div><div class="meter-label"><span>Curiosity.exe</span><span>100%</span></div><div class="meter"><span></span></div></div>
+        <footer class="statusbar"><span>4 skills groups</span><span>Ready</span></footer>
+      </section>
+
+      <section class="window window-projects" id="projects" aria-labelledby="projects-title" data-window="projects">
+        <header class="titlebar"><span class="titlebar-icon" aria-hidden="true">📂</span><h2 id="projects-title">Projects</h2><div class="window-controls"><button class="window-control minimize" type="button" aria-label="Minimize Projects window">_</button><button class="window-control maximize" type="button" aria-label="Maximize Projects window">□</button><button class="window-control close" type="button" aria-label="Close Projects window">×</button></div></header>
+        <div class="window-content project-content"><div class="project-preview"><img src="/images/project-1.png" alt="Preview of a data visualization project"><span class="preview-caption">PROJECT_01.PNG</span></div><div class="project-copy"><p class="eyebrow">SELECTED WORK</p><h3>Building with impact</h3><p>Exploring ideas across machine learning, data, and the web. I like turning a rough concept into something people can use.</p><div class="project-tags"><span>Machine Learning</span><span>Web</span><span>Data</span></div></div></div>
+        <footer class="statusbar"><span>1 item selected</span><span>JPG / PNG</span></footer>
+      </section>
+
+      <section class="window window-experience" id="experience" aria-labelledby="experience-title" data-window="experience">
+        <header class="titlebar"><span class="titlebar-icon" aria-hidden="true">▤</span><h2 id="experience-title">Work &amp; study</h2><div class="window-controls"><button class="window-control minimize" type="button" aria-label="Minimize Work and study window">_</button><button class="window-control maximize" type="button" aria-label="Maximize Work and study window">□</button><button class="window-control close" type="button" aria-label="Close Work and study window">×</button></div></header>
+        <div class="window-content timeline"><article><span class="timeline-year">2024 —</span><div><h3>Machine Learning Intern</h3><p>BHU · Research and applied ML</p></div></article><article><span class="timeline-year">2023 —</span><div><h3>Project Manager</h3><p>Debuggers Club · Led collaborative projects</p></div></article><div class="institution-mark">BHU<span>/</span></div></div>
+        <footer class="statusbar"><span>2 records</span><span>Updated 2026</span></footer>
+      </section>
+
+      <section class="window window-contact" id="contact" aria-labelledby="contact-title" data-window="contact">
+        <header class="titlebar"><span class="titlebar-icon" aria-hidden="true">✉</span><h2 id="contact-title">New message</h2><div class="window-controls"><button class="window-control minimize" type="button" aria-label="Minimize Contact window">_</button><button class="window-control maximize" type="button" aria-label="Maximize Contact window">□</button><button class="window-control close" type="button" aria-label="Close Contact window">×</button></div></header>
+        <div class="window-content contact-content"><span class="info-symbol" aria-hidden="true">i</span><div><p>Have an idea or want to work together?</p><a class="email-address" href="mailto:raj2005sriv@gmail.com">raj2005sriv@gmail.com</a></div><a class="raised-button" href="mailto:raj2005sriv@gmail.com">Write an email</a></div>
+        <footer class="statusbar"><span>Connection: Internet</span><span>Ready</span></footer>
+      </section>
+    </div>
+
+    <aside class="start-menu" id="start-menu" aria-label="Start menu" hidden><div class="start-brand"><span>Windows</span><b>Portfolio</b></div><div class="start-items"><a href="#about"><span>▣</span> About Raj</a><a href="#skills"><span>📁</span> Skills</a><a href="#projects"><span>📂</span> Projects</a><a href="#experience"><span>▤</span> Work &amp; study</a><a href="#contact"><span>✉</span> Contact</a><div class="start-divider"></div><button type="button" id="shutdown"><span>⏻</span> Shut Down…</button></div></aside>
+    <div class="shutdown-dialog" id="shutdown-dialog" role="dialog" aria-modal="true" aria-labelledby="shutdown-title" hidden><div class="titlebar"><span>System Message</span><button class="window-control close" type="button" aria-label="Close dialog">×</button></div><div class="dialog-content"><span class="info-symbol">i</span><p id="shutdown-title">It is now safe to close this window.</p></div><button type="button" class="raised-button dialog-ok">OK</button></div>
+
+    <footer class="taskbar"><button class="start-button" id="start-button" type="button" aria-expanded="false" aria-controls="start-menu"><span class="windows-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Start</button><span class="taskbar-divider"></span><div class="taskbar-apps" aria-label="Open windows"></div><div class="tray"><span class="tray-network" aria-hidden="true">◉</span><time id="clock"></time></div></footer>
+  </main>
+</body>
 </html>
