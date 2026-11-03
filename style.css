@@ -23,6 +23,9 @@ a:focus-visible, button:focus-visible { outline: 1px dotted #111; outline-offset
 [hidden] { display: none !important; }
 
 .desktop { min-height: 100vh; padding: 20px 22px 72px; position: relative; overflow: hidden; background-color: var(--desktop); background-image: radial-gradient(ellipse at 72% 5%, rgba(50, 200, 180, .25), transparent 48%); }
+.desktop[data-wallpaper="clouds"] { background-image: url('/images/win95-clouds.bmp'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+.desktop[data-wallpaper="win95-logo"] { background-image: url('/images/win95-clouds-logo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+.desktop[data-wallpaper="win98"] { background-image: url('/images/win98-more-windows.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
 .desktop-icons { position: absolute; inset: 20px auto 74px 18px; z-index: 0; display: flex; flex-direction: column; gap: 22px; width: 84px; }
 .desktop-icon { width: 82px; min-height: 74px; display: flex; flex-direction: column; align-items: center; gap: 4px; color: white; text-align: center; text-decoration: none; text-shadow: 1px 1px #333; padding: 4px 2px; }
 .desktop-icon:hover, .desktop-icon:focus-visible { background: rgba(0, 0, 128, .35); outline: 1px dotted #fff; outline-offset: -2px; }
@@ -30,6 +33,13 @@ a:focus-visible, button:focus-visible { outline: 1px dotted #111; outline-offset
 .computer-icon { color: #e6e6e6; font-size: 33px; text-shadow: 1px 1px #333; }
 .folder-icon { font-size: 29px; }
 .bin-icon { font-size: 30px; color: #e9eeee; }
+.desktop-context-menu { position: fixed; z-index: 50; min-width: 216px; padding: 3px; background: var(--face); border: 2px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: 2px 2px 4px #0007; color: #111; }
+.desktop-context-menu button { width: 100%; min-height: 29px; padding: 4px 6px; display: flex; align-items: center; gap: 8px; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.desktop-context-menu button:hover, .desktop-context-menu button:focus-visible { background: var(--navy); color: white; outline: 0; }
+.context-icon { width: 20px; flex: 0 0 20px; text-align: center; font-size: 17px; }
+.context-shortcut { margin-left: auto; }
+.context-separator { height: 1px; margin: 3px 4px 3px 28px; background: #888; box-shadow: 0 1px #fff; }
+.context-current { min-height: 25px; display: flex; align-items: center; gap: 8px; padding: 3px 6px; color: #555; font-size: 11px; }
 
 .window-area { position: relative; z-index: 1; width: min(1120px, calc(100% - 130px)); margin: 0 auto 0 max(115px, calc((100% - 1120px) / 2 + 70px)); padding-top: 20px; display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(300px, .88fr); gap: 22px; align-items: start; }
 .window { min-width: 0; background: var(--face); border: 2px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: 1px 1px 0 #111, 2px 2px 0 rgba(0,0,0,.24); transform: translate3d(var(--drag-x, 0px), var(--drag-y, 0px), 0); }

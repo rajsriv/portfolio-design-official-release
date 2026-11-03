@@ -5,6 +5,64 @@ const taskbarApps = document.querySelector('.taskbar-apps');
 const startButton = document.querySelector('#start-button');
 const startMenu = document.querySelector('#start-menu');
 const shutdownDialog = document.querySelector('#shutdown-dialog');
+const desktop = document.querySelector('.desktop');
+const contextMenu = document.querySelector('#desktop-context-menu');
+const wallpaperName = document.querySelector('#wallpaper-name');
+const wallpapers = [
+  { id: 'teal', name: 'Windows 95 Teal' },
+  { id: 'clouds', name: 'Windows 95 Clouds' },
+  { id: 'win95-logo', name: 'Windows 95' },
+  { id: 'win98', name: 'More Windows 98' },
+];
+
+let wallpaperIndex = 0;
+try {
+  const savedWallpaper = localStorage.getItem('portfolio-wallpaper');
+  const savedIndex = wallpapers.findIndex((wallpaper) => wallpaper.id === savedWallpaper);
+  if (savedIndex >= 0) wallpaperIndex = savedIndex;
+} catch { /* Keep the default wallpaper when storage is unavailable. */ }
+
+function applyWallpaper() {
+  const wallpaper = wallpapers[wallpaperIndex];
+  desktop.dataset.wallpaper = wallpaper.id;
+  wallpaperName.textContent = wallpaper.name;
+  try { localStorage.setItem('portfolio-wallpaper', wallpaper.id); } catch { /* Wallpaper still changes for this visit. */ }
+}
+
+function closeContextMenu() {
+  contextMenu.hidden = true;
+}
+
+function showContextMenu(x, y) {
+  startMenu.hidden = true;
+  startButton.setAttribute('aria-expanded', 'false');
+  contextMenu.hidden = false;
+  const bounds = contextMenu.getBoundingClientRect();
+  contextMenu.style.left = `${Math.max(4, Math.min(x, window.innerWidth - bounds.width - 4))}px`;
+  contextMenu.style.top = `${Math.max(4, Math.min(y, window.innerHeight - bounds.height - 48))}px`;
+  contextMenu.querySelector('#next-wallpaper').focus();
+}
+
+desktop.addEventListener('contextmenu', (event) => {
+  if (event.target.closest('.window, .taskbar, .start-menu, .shutdown-dialog, .desktop-icon')) return;
+  event.preventDefault();
+  showContextMenu(event.clientX, event.clientY);
+});
+
+desktop.addEventListener('keydown', (event) => {
+  if ((event.shiftKey && event.key === 'F10') || event.key === 'ContextMenu') {
+    event.preventDefault();
+    showContextMenu(12, Math.min(event.target.getBoundingClientRect().bottom, window.innerHeight - 140));
+  }
+});
+
+contextMenu.querySelector('#next-wallpaper').addEventListener('click', () => {
+  wallpaperIndex = (wallpaperIndex + 1) % wallpapers.length;
+  applyWallpaper();
+  closeContextMenu();
+});
+
+applyWallpaper();
 
 function setWindowState(panel, state) {
   panel.classList.remove('is-minimized');
@@ -112,11 +170,13 @@ document.addEventListener('pointerdown', (event) => {
     startMenu.hidden = true;
     startButton.setAttribute('aria-expanded', 'false');
   }
+  if (!contextMenu.hidden && !contextMenu.contains(event.target)) closeContextMenu();
 });
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     startMenu.hidden = true;
+    closeContextMenu();
     shutdownDialog.hidden = true;
     startButton.setAttribute('aria-expanded', 'false');
   }

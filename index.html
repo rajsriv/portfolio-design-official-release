@@ -9,12 +9,18 @@
   <script type="module" src="/main.js"></script>
 </head>
 <body>
-  <main class="desktop" aria-label="Raj Srivastava portfolio desktop">
+  <main class="desktop" aria-label="Raj Srivastava portfolio desktop" data-wallpaper="teal" tabindex="-1">
     <div class="desktop-icons" aria-label="Desktop shortcuts">
       <a class="desktop-icon" href="#about"><span class="icon-art computer-icon" aria-hidden="true">▣</span><span>My Computer</span></a>
       <a class="desktop-icon" href="#skills"><span class="icon-art folder-icon" aria-hidden="true">📁</span><span>Skills</span></a>
       <a class="desktop-icon" href="#projects"><span class="icon-art folder-icon" aria-hidden="true">📁</span><span>Projects</span></a>
       <a class="desktop-icon" href="#contact"><span class="icon-art bin-icon" aria-hidden="true">♻</span><span>Contact</span></a>
+    </div>
+
+    <div class="desktop-context-menu" id="desktop-context-menu" role="menu" aria-label="Desktop menu" hidden>
+      <button type="button" role="menuitem" id="next-wallpaper"><span class="context-icon" aria-hidden="true">▧</span><span>Next wallpaper</span><span class="context-shortcut">→</span></button>
+      <div class="context-separator"></div>
+      <div class="context-current"><span class="context-icon" aria-hidden="true">◉</span><span id="wallpaper-name">Windows 95 Teal</span></div>
     </div>
 
     <div class="window-area">
