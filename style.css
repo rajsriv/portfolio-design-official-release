@@ -43,7 +43,7 @@ a:focus-visible, button:focus-visible { outline: 1px dotted #111; outline-offset
 
 .window-area { position: relative; z-index: 1; width: min(1120px, calc(100% - 130px)); margin: 0 auto 0 max(115px, calc((100% - 1120px) / 2 + 70px)); padding-top: 20px; display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(300px, .88fr); gap: 22px; align-items: start; }
 .window { min-width: 0; background: var(--face); border: 2px solid; border-color: var(--light) var(--dark) var(--dark) var(--light); box-shadow: 1px 1px 0 #111, 2px 2px 0 rgba(0,0,0,.24); transform: translate3d(var(--drag-x, 0px), var(--drag-y, 0px), 0); }
-.window.is-focused { position: relative; z-index: 2; }
+.window.is-focused { z-index: 12; }
 .window-about { grid-column: 1; }
 .window-skills { grid-column: 2; }
 .window-projects { grid-column: 1; }
@@ -136,7 +136,8 @@ a:focus-visible, button:focus-visible { outline: 1px dotted #111; outline-offset
 .dialog-content p { margin: 0; line-height: 1.5; }
 .dialog-ok { display: block; min-width: 76px; margin: 0 auto 12px; cursor: pointer; }
 .is-minimized { display: none; }
-.is-maximized { position: fixed; z-index: 10; inset: 8px 8px 50px !important; width: auto !important; grid-column: auto !important; transform: none; }
+.window.is-maximized { position: fixed; z-index: 10; inset: 8px 8px 50px !important; width: auto !important; grid-column: auto !important; transform: none; }
+.window.is-focused.is-maximized { z-index: 12; }
 
 @media (min-width: 1100px) {
   .window-about .window-content { padding: 20px; }
